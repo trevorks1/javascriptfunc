@@ -73,3 +73,61 @@ function changeColor() {
 }
 
 document.getElementById('colorBtn').addEventListener('click', changeColor);
+
+// Example 6: Fibonacci Sequence
+function fibonacci(n) {
+    if (n <= 1) {
+        return [0];
+    } else {
+        let sequence = [0, 1];
+        for (let i = 2; i < n; i++) {
+            sequence.push(sequence[i - 1] + sequence[i - 2]);
+        }
+        return sequence;
+    }
+}
+
+function renderFibonacci() {
+    const inputNumber = parseInt(document.getElementById('fibonacciNumber').value);
+    const sequence = fibonacci(inputNumber);
+    document.getElementById('fibonacciResult').innerText = `Fibonacci Sequence: ${sequence.join(', ')}`;
+}
+
+document.getElementById('fibonacciBtn').addEventListener('click', renderFibonacci);
+
+
+// Example 7: Prime Number Check
+function isPrime(n) {
+    if (n <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function renderPrimeCheck() {
+    const inputNumber = parseInt(document.getElementById('primeNumber').value);
+    const isPrimeResult = isPrime(inputNumber);
+    document.getElementById('primeResult').innerText = `Is Prime: ${isPrimeResult}`;
+}
+
+document.getElementById('primeBtn').addEventListener('click', renderPrimeCheck);
+
+
+// Example 8: Palindrome Check
+function isPalindrome(str) {
+    const reversedStr = str.split('').reverse().join('');
+    return str === reversedStr;
+}
+
+function renderPalindromeCheck() {
+    const inputString = document.getElementById('inputPalindrome').value;
+    const isPalindromeResult = isPalindrome(inputString);
+    document.getElementById('palindromeResult').innerText = `Is Palindrome: ${isPalindromeResult}`;
+}
+
+document.getElementById('palindromeBtn').addEventListener('click', renderPalindromeCheck);
