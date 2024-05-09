@@ -1,20 +1,70 @@
+header {
+    background-color: #d3f0d6; /* Pastel green color */
+    padding: 20px;
+    border-bottom: 2px solid #a3d3af; /* Lighter green border */
+    width: 100%; /* Stretch header across the entire width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px; /* Increase font size */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 2px; /* Add letter spacing */
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 4px; /* Rounded corners */
+    color: white; /* Text color */
+    font-weight: bold; /* Bolden the letters */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Add shadow to letters */
+}
+
+.menu-toggle {
+    cursor: pointer;
+    border: 2px solid #333; /* Border around the hamburger menu */
+    border-radius: 4px; /* Rounded corners */
+    padding: 4px; /* Adjust padding to prevent overlapping with borders */
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+    border-radius: 2px;
+}
+
+.menu-toggle:hover .bar {
+    background-color: #555;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
 }
 
 #app {
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: #f7f7f7; /* Off-white background color */
     padding: 20px;
+    border-radius: 8px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Limit maximum width */
+}
+
+.function-container {
+    display: flex;
+    flex-direction: column; /* Stack example functions vertically */
+    align-items: center; /* Center horizontally */
 }
 
 .example {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
+    margin-bottom: 20px; /* Add space between example functions */
 }
 
 .example h2 {
