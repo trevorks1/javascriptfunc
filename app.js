@@ -131,3 +131,48 @@ function renderPalindromeCheck() {
 }
 
 document.getElementById('palindromeBtn').addEventListener('click', renderPalindromeCheck);
+
+// Example 9: Find Maximum Element in an Array
+function findMax(arr) {
+    if (arr.length === 0) {
+        return null;
+    }
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+// Rendering function for finding maximum element in an array
+function renderMaxArrayElement() {
+    const inputArray = document.getElementById('inputMaxArray').value;
+    const arr = inputArray.split(',').map(Number); // Convert comma-separated string to array of numbers
+    const max = findMax(arr);
+    document.getElementById('maxArrayResult').innerText = `Maximum Element: ${max}`;
+}
+
+document.getElementById('maxArrayBtn').addEventListener('click', renderMaxArrayElement);
+
+
+// Example 10: Generate Random Password
+function generatePassword(length) {
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
+    return password;
+}
+
+// Rendering function for generating random password
+function renderRandomPassword() {
+    const passwordLength = parseInt(document.getElementById('passwordLength').value);
+    const password = generatePassword(passwordLength);
+    document.getElementById('randomPasswordResult').innerText = `Random Password: ${password}`;
+}
+
+document.getElementById('passwordBtn').addEventListener('click', renderRandomPassword);
